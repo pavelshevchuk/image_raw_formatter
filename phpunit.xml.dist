@@ -12,7 +12,7 @@
          bootstrap="vendor/autoload.php">
 
     <testsuites>
-       <testsuite name="Drupal\vimeo_field test suite">
+       <testsuite name="Drupal\image_raw_formatter test suite">
            <directory suffix="Test.php">Tests</directory>
        </testsuite>
     </testsuites>

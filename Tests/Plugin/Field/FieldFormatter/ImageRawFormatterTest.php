@@ -1,27 +1,27 @@
 <?php
 /**
  * @file
- * Content Test\Drupal\vimeo_field\Plugin\Field\FieldFormatter\VimeoDefaultFormatter
+ * Content Test\Drupal\vimeo_field\Plugin\Field\FieldFormatter\ImageRawFormatter
  */
 
-use \Drupal\vimeo_field\Plugin\Field\FieldFormatter\VimeoDefaultFormatter;
+use \Drupal\vimeo_field\Plugin\Field\FieldFormatter\ImageRawFormatter;
 use \PHPUnit_Framework_TestCase;
 
-class VimeoDefaultFormatterTest extends PHPUnit_Framework_TestCase
+class ImageRawFormatterTest extends PHPUnit_Framework_TestCase
 {
-  /** @var $formatter \Drupal\vimeo_field\Plugin\Field\FieldFormatter\VimeoDefaultFormatter */
+  /** @var $formatter \Drupal\vimeo_field\Plugin\Field\FieldFormatter\ImageRawFormatter */
   protected $formatter;
 
   /**
    * @param  array                                                                 $settings
-   * @return \Drupal\vimeo_field\Plugin\Field\FieldFormatter\VimeoDefaultFormatter
+   * @return \Drupal\vimeo_field\Plugin\Field\FieldFormatter\ImageRawFormatter
    */
   protected function getVimeoFormatter(array $settings = [])
   {
     $pluginDefinition = $this->getMockBuilder('\Drupal\Core\Field\FieldDefinitionInterface')
                              ->getMock();
 
-    return new VimeoDefaultFormatter('vimeo', '', $pluginDefinition, $settings, 'vimeo', '');
+    return new ImageRawFormatter('vimeo', '', $pluginDefinition, $settings, 'vimeo', '');
   }
 
   public function testShouldReturnVimeoIdFromValidUrl()
@@ -147,7 +147,7 @@ class VimeoDefaultFormatterTest extends PHPUnit_Framework_TestCase
 
   public function testShouldGetDefaultSettings()
   {
-    $this->assertEquals(['vimeo_width'  => 600, 'vimeo_height' => 400], VimeoDefaultFormatter::defaultSettings());
+    $this->assertEquals(['vimeo_width'  => 600, 'vimeo_height' => 400], ImageRawFormatter::defaultSettings());
   }
 
   public function testShouldreturnSummaryWithDefaultSettings()
