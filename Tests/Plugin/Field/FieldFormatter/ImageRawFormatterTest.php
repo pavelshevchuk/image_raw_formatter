@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Content Test\Drupal\vimeo_field\Plugin\Field\FieldFormatter\ImageRawFormatter
+ * Content Test\Drupal\image_raw_formatter\Plugin\Field\FieldFormatter\ImageRawFormatter
  */
 
 use \Drupal\vimeo_field\Plugin\Field\FieldFormatter\ImageRawFormatter;
