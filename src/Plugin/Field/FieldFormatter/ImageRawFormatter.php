@@ -1,23 +1,24 @@
 <?php
+
 /**
  * @file
  * Contains \Drupal\image_raw_formatter\Plugin\Field\FieldFormatter\ImageRawFormatter.
  */
 
-namespace Drupal\image_raw_formatter\Plugin\Field\FieldFormatter;
+namespace Drupal\image\Plugin\Field\FieldFormatter;
 
-use \Drupal\Core\Field\FieldItemListInterface;
-use \Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 use \InvalidArgumentException;
 
 /**
- * Plugin implementation of the 'vimeo_default' formatter.
+ * Plugin implementation of the 'image_raw_formatter' formatter.
  *
  * @FieldFormatter(
- *   id = "vimeo_default",
- *   label = @Translation("Vimeo Media"),
+ *   id = "image_raw_formatter",
+ *   label = @Translation("Image Raw"),
  *   field_types = {
- *     "text"
+ *     "image"
  *   }
  * )
  */
