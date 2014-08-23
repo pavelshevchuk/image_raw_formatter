@@ -1,5 +1,5 @@
 name: Image Raw Formatter
 type: module
-description: Image Raw formatter to Drupal 8.
+description: Image Raw formatter return absolute URL of images useful in Rest.
 core: 8.x
-package: Media
+package: Formatters

@@ -8,6 +8,7 @@
 namespace Drupal\image_raw_formatter\Plugin\Field\FieldFormatter;
 
 use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatterBase;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use \InvalidArgumentException;
@@ -74,6 +75,7 @@ class ImageRawFormatter extends ImageFormatterBase
 
     // Collect cache tags to be added for each item in the field.
     $cache_tags = array();
+    $image_style = NULL;
     if (!empty($image_style_setting)) {
       $image_style = entity_load('image_style', $image_style_setting);
       $cache_tags = $image_style->getCacheTag();
@@ -82,7 +84,18 @@ class ImageRawFormatter extends ImageFormatterBase
     foreach ($items as $delta => $item) {
       if ($item->entity) {
         $image_uri = $item->entity->getFileUri();
-        $elements[$delta] = file_create_url($image_uri);
+
+        // Get image style URL
+        if ($image_style) {
+          $image_uri = ImageStyle::load($image_style->getName())->buildUrl($image_uri);
+        } else {
+          // Get absolute path for original image
+          $image_uri = $item->entity->url();
+        }
+
+        $elements[$delta] = array(
+          '#markup' => $image_uri,
+        );
       }
     }
 
