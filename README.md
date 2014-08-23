@@ -7,7 +7,7 @@ Vimeo Field Formatter for Drupal 8
 ### Install
 ```bash
 $ cd path/to/drupal/8/modules
-$ git clone https://github.com/enzolutions/image-raw-formatter.git
+$ git clone https://github.com/enzolutions/image_raw_formatter.git
 $ drush en -y image_raw_formatter # or enable this module via UI
 ```
 
