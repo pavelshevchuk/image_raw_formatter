@@ -73,12 +73,10 @@ class ImageRawFormatter extends ImageFormatterBase
 
     $image_style_setting = $this->getSetting('image_style');
 
-    // Collect cache tags to be added for each item in the field.
-    $cache_tags = array();
+    // Determine if Image style is required.
     $image_style = NULL;
     if (!empty($image_style_setting)) {
       $image_style = entity_load('image_style', $image_style_setting);
-      $cache_tags = $image_style->getCacheTag();
     }
 
     foreach ($items as $delta => $item) {
