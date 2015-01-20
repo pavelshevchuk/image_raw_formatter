@@ -1,6 +1,5 @@
 Image Raw Field Formatter
 =====================
-[![Build Status](https://travis-ci.org/dmouse/vimeo-field.svg?branch=master)](https://travis-ci.org/dmouse/vimeo-field)
 
 Image Raw Formatter for Drupal 8. This formatter return URLs absolute of original images or image style if is configured. The default formates form image doens't work for REST services because return HTML tags for images.
 
