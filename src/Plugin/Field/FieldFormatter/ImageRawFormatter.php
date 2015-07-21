@@ -30,6 +30,16 @@ class ImageRawFormatter extends ImageFormatterBase
   /**
    * {@inheritdoc}
    */
+  public static function defaultSettings() {
+    $settings = parent::defaultSettings();
+
+    $settings['image_style'] = NULL;
+    return $settings;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $image_styles = image_style_options(FALSE);
     $element['image_style'] = array(
